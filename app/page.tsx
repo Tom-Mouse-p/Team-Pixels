@@ -1,113 +1,275 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { JSX, SVGProps } from "react";
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+export default function landing() {
+    return (
+        <div className="flex flex-col min-h-[100dvh]">
+            <main className="flex-1">
+                <section className="w-full py-12 md:py-24 lg:py-32  flex justify-center">
+                    <div className="container px-4 md:px-6 ">
+                        <div className="grid max-w-[1300px] mx-auto items-center gap-4 px-4 sm:px-6 md:gap-10 lg:grid-cols-[400px_1fr]">
+                            <div className="flex items-center justify-center rounded-lg overflow-hidden aspect-square">
+                                <img
+                                    alt="Image"
+                                    className="rounded-lg object-cover object-center"
+                                    height="400"
+                                    src="https://media.istockphoto.com/id/1856956562/photo/group-of-diverse-people-in-unity-wearing-blue-t-shirt-holding-donation-box-and-donated-items.webp?b=1&s=170667a&w=0&k=20&c=gYjDqCJcmLH1Xhk0AlbZV5XY0Z4f4zEsXypd9ltz-Ew="
+                                    style={{
+                                        aspectRatio: "400/400",
+                                        objectFit: "cover",
+                                    }}
+                                    width="400"
+                                />
+                            </div>
+                            <div className="space-y-4">
+                                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                                    Our Mission
+                                </div>
+                                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                                    Help us make the world a better place
+                                </h1>
+                                <div className="space-y-4">
+                                    <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                                        We are committed to making a difference
+                                        in the world. Your donation will help us
+                                        provide food, shelter, and education to
+                                        those in need.
+                                    </p>
+                                    <Link href={"/listProduct"}>
+                                        <Button className=" w-full mt-2 p-6 text-lg">
+                                            Donate any product
+                                        </Button>
+                                    </Link>
+
+                                    <form className="grid grid-cols-4 gap-2 min-[400px]:flex-row w-full hidden">
+                                        <Input
+                                            className="max-w-md col-span-2"
+                                            placeholder="Enter your email to stay informed"
+                                            type="email"
+                                        />
+                                        <button
+                                            type="submit"
+                                            className="border rounded-md p-1 grid-cols-2"
+                                        >
+                                            Sign up for newsletter
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className="w-full py-12 md:py-24 lg:py-32 border-t  flex justify-center">
+                    <div className="container px-4 md:px-6 ">
+                        <div className="grid max-w-5xl mx-auto items-center gap-10 lg:grid-cols-2 lg:gap-16 ">
+                            <div className="space-y-4">
+                                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                                    Impact
+                                </div>
+                                <h2 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
+                                    Your donation can change lives
+                                </h2>
+                                <p className="text-gray-500 dark:text-gray-400">
+                                    With your support, we can make a real
+                                    difference in the lives of those who need it
+                                    most.
+                                </p>
+                            </div>
+                            <ul className="grid gap-6 md:grid-cols-2">
+                                <li>
+                                    <div className="grid gap-1">
+                                        <h3 className="text-xl font-bold">
+                                            Meals Provided
+                                        </h3>
+                                        <p className="text-gray-500 dark:text-gray-400">
+                                            Your donation can help provide
+                                            nutritious meals to families in
+                                            need.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="grid gap-1">
+                                        <h3 className="text-xl font-bold">
+                                            Shelter Provided
+                                        </h3>
+                                        <p className="text-gray-500 dark:text-gray-400">
+                                            Your support can help provide safe
+                                            and secure shelter for those without
+                                            homes.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="grid gap-1">
+                                        <h3 className="text-xl font-bold">
+                                            Education Supported
+                                        </h3>
+                                        <p className="text-gray-500 dark:text-gray-400">
+                                            Your generosity can help support
+                                            education programs for children
+                                            around the world.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="grid gap-1">
+                                        <h3 className="text-xl font-bold">
+                                            Tchnical support
+                                        </h3>
+                                        <p className="text-gray-500 dark:text-gray-400">
+                                            Your donation can help provide
+                                            access to essential technical
+                                            services for those in need.
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section className="w-full py-12 md:py-24 lg:py-32 border-t  flex justify-center">
+                    <div className="container px-4 md:px-6">
+                        <div className="grid max-w-5xl mx-auto items-center gap-10 lg:grid-cols-2 lg:gap-16">
+                            <div className="space-y-4">
+                                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                                    Testimonials
+                                </div>
+                                <h2 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
+                                    Making a difference in the world
+                                </h2>
+                            </div>
+                            <div className="space-y-4">
+                                <div className="grid gap-2">
+                                    <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                                        Story
+                                    </div>
+                                    <p className="text-gray-500 dark:text-gray-400">
+                                        "The support we received from the
+                                        community has been incredible. Thanks to
+                                        your donations, we've been able to make
+                                        a real difference in the lives of those
+                                        in need."
+                                    </p>
+                                </div>
+                                <div className="grid gap-2">
+                                    <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                                        Story
+                                    </div>
+                                    <p className="text-gray-500 dark:text-gray-400">
+                                        "Your generosity has helped us provide
+                                        essential services to those who need it
+                                        most. We are grateful for your support
+                                        and will continue to work hard to make
+                                        the world a better place."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className="w-full py-12 md:py-24 lg:py-32 border-t  flex justify-center">
+                    <div className="container px-4 md:px-6">
+                        <div className="grid max-w-5xl mx-auto items-center gap-10 lg:grid-cols-2 lg:gap-16">
+                            <div className="space-y-4">
+                                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
+                                    Products
+                                </div>
+                                <h2 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
+                                    Items needed for donation
+                                </h2>
+                                <p className="text-gray-500 dark:text-gray-400">
+                                    Your donations can help provide essential
+                                    items to those in need. Here are the
+                                    products we are currently accepting for
+                                    donation:
+                                </p>
+                            </div>
+                            <ul className="grid gap-4 md:gap-6">
+                                <li>
+                                    <div className="grid gap-1">
+                                        <h3 className="text-xl font-bold">
+                                            Clothing
+                                        </h3>
+                                        <p className="text-gray-500 dark:text-gray-400">
+                                            New or gently used clothing for men,
+                                            women, and children.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="grid gap-1">
+                                        <h3 className="text-xl font-bold">
+                                            Food
+                                        </h3>
+                                        <p className="text-gray-500 dark:text-gray-400">
+                                            Non-perishable food items such as
+                                            canned goods, pasta, rice, and more.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="grid gap-1">
+                                        <h3 className="text-xl font-bold">
+                                            Toiletries
+                                        </h3>
+                                        <p className="text-gray-500 dark:text-gray-400">
+                                            Hygiene products including soap,
+                                            shampoo, toothpaste, and toilet
+                                            paper.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="grid gap-1">
+                                        <h3 className="text-xl font-bold">
+                                            School Supplies
+                                        </h3>
+                                        <p className="text-gray-500 dark:text-gray-400">
+                                            Notebooks, pencils, pens, and other
+                                            school supplies for children.
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section className="w-full py-12 md:py-24 lg:py-32 border-t  flex justify-center">
+                    <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+                        <div className="space-y-3">
+                            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                                Meet our Customers
+                            </h2>
+                            <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                                Trusted by the best NGOs in the world.
+                            </p>
+                        </div>
+                        <div className="divide-y rounded-lg border">
+                            <div className="grid w-full grid-cols-3 items-stretch justify-center divide-x md:grid-cols-3">
+                                <div className="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
+                                    <img
+                                        alt="Logo"
+                                        className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
+                                        height="70"
+                                        src="https://th.bing.com/th/id/R.c8bf7c087ca9793d094042845707ffac?rik=fjZN1AYH30vXIw&riu=http%3a%2f%2fpngimg.com%2fuploads%2fgoogle%2fgoogle_PNG19635.png&ehk=ZmsumEtoeJQhKoUzQTZO2TEbYPBu0%2b7EFdjmJ3qljls%3d&risl=&pid=ImgRaw&r=0"
+                                        width="140"
+                                    />
+                                </div>
+                                <div className="mx-auto flex w-full items-center justify-center p-4 sm:p-8" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
         </div>
-      </div>
+    );
+}
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+function MountainIcon(
+    props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) {
+    return <h1>CareCraft</h1>;
 }

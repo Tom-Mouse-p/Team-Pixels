@@ -12,7 +12,7 @@ export default function Component() {
                                 About Us
                             </div>
                             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-                                Welcome to Our Organization
+                                Welcome to CareCraft!
                             </h1>
                         </div>
                         <div className="max-w-3xl space-y-4 text-gray-500 md:text-xl/relaxed dark:text-gray-400">

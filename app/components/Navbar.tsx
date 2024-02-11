@@ -30,6 +30,7 @@ const Navbar = () => {
             <header className="px-4 lg:px-6 h-14 flex items-center sticky top-0 left-0 bg-inherit border-0 border-b-2 border-b-slate-300">
                 <Link className="flex items-center justify-center" href="/">
                     <MountainIcon className="h-6 w-6" />
+                    <h1 className="pl-4">CareCraft</h1>
                 </Link>
                 <nav className="ml-auto flex gap-4 sm:gap-6">
                     <Link

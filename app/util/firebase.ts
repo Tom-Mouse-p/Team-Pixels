@@ -1,8 +1,13 @@
 // util/firebase.ts
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
 import { initializeApp } from "firebase/app";
+import {
+    getFirestore,
+    collection,
+    getDocs,
+    Firestore,
+} from "firebase/firestore/lite";
+// Follow this pattern to import other Firebase services
+// import { } from 'firebase/<service>';
 
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -14,5 +19,4 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-
-export default app;
+export const db = getFirestore(app);

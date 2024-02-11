@@ -1,7 +1,10 @@
+// "use client";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { JSX, SVGProps } from "react";
+import { JSX, SVGProps, useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "@/app/util/firebase";
 
 export default function landing() {
     return (
